@@ -1,0 +1,32 @@
+{
+  "name": "we-have-gunrun-at-home",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/insanity54/we-have-gunrun-at-home",
+  "author": "Chris Grimmett <chris@grimtech.net>",
+  "license": "Unlicense",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vitejs/plugin-vue": "^3.0.1",
+    "@vueuse/head": "^0.7.7",
+    "express-favicon": "^2.0.1",
+    "express-handlebars": "^6.0.6",
+    "express-nunjucks": "^2.2.5",
+    "nunjucks": "^3.2.3",
+    "socket.io": "^4.5.1",
+    "socket.io-client": "^4.5.1",
+    "vite-ssr": "^0.16.0",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.2"
+  },
+  "devDependencies": {
+    "vite": "^3.0.3"
+  },
+  "scripts": {
+    "build": "yarn run build:client && yarn run build:server",
+    "build:client": "vite build --ssrManifest --outDir dist/client",
+    "build:server": "vite build --ssr src/entry-server.js --outDir dist/server",
+    "start": "node index"
+  }
+}
